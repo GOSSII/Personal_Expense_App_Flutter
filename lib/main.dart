@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 import './model/transcation.dart';
 
@@ -60,17 +61,17 @@ class MyHomePage extends StatelessWidget {
                       ),
                       decoration: BoxDecoration(
                         border: Border.all(
-                          color: Colors.purple,
+                          color: Colors.green,
                           width: 2,
                         ),
                       ),
                       padding: EdgeInsets.all(10),
                       child: Text(
-                        tx.amount.toString(),
+                       '\$${tx.amount}',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 20,
-                          color: Colors.purple,
+                          color: Colors.green,
                         ),
                       ),
                     ),
@@ -85,7 +86,7 @@ class MyHomePage extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          tx.date.toString(),
+                          DateFormat.yMMMMd().add_jm().format(tx.date),
                           style: TextStyle(
                             color: Colors.grey,
                           ),
